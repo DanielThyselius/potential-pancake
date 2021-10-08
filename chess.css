@@ -1,0 +1,61 @@
+
+/* Chess board */
+#chess-board {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto;
+	justify-content: center;
+	background-color: rgb(187, 138, 76);
+	box-shadow: 0 0 4px 14px #44ab99 inset;
+	padding: 50px 0;
+}
+
+.square {
+	background-color: bisque;
+	border: 1px solid darkgreen;
+	padding: 5px;
+	width: 50px;
+	height: 50px;
+}
+
+.darkSquare {
+	background-color: rgb(54, 45, 109);
+}
+
+.lightSquare {
+	background-color: rgb(175, 166, 137);
+}
+
+.piece {
+	width: 50px;
+}
+
+.clicked {
+	/* box-shadow: inset 2px 1px 12px 10px rgba(0,0,0,0.85); */
+	animation: clickAnimation 0.3s;
+}
+
+.pieceClicked {
+	animation: clickPiece 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes clickPiece {
+	0% {
+		transform: scale(1, 1);
+	}
+	100% {
+		transform: scale(0, 0);
+	}
+}
+
+@keyframes clickAnimation {
+	0% {
+		transform: scale(1, 1) rotate(0deg);
+	}
+	10% {
+		transform: scale(0.8, 0.8) rotate(45deg);
+	}
+	100% {
+		transform: scale(1, 1) rotate(90deg);
+	}
+}

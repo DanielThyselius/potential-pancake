@@ -1,0 +1,106 @@
+body {
+	box-sizing: border-box;
+}
+
+#layout {
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-areas:
+		"header header    header"
+		"menu    main       ad  "
+		"menu    main       ad  "
+		"menu    .         .    "
+		"footer  footer  footer ";
+	grid-gap: 10px;
+	background-color: #44ab99;
+	padding: 10px;
+}
+
+#layout > div {
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	box-shadow: 0 0 2px 2px #44ab99 inset;
+}
+
+/* Header */
+#header {
+	grid-area: header;
+	background-color: rgb(126, 202, 198);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: stretch;
+	align-items: center;
+	font-size: 2em;
+}
+
+.logo {
+	background-color: mediumpurple;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+}
+
+.header-text {
+	margin: 5px;
+}
+
+/* Menu */
+#menu {
+	grid-area: menu;
+	font-size: 2em;
+    min-height: 300px;
+}
+
+#menu > ul {
+    height: 100%;
+    display: flex;
+    padding: 0 0 0 8px;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+/* Main */
+#main {
+	grid-area: main;
+}
+
+.page {
+	display: none;
+}
+
+#blank-page {
+	display: block;
+}
+
+/* Ad */
+#ad{
+    grid-area: ad;
+    background-color: violet;
+}
+
+/* Footer */
+#footer {
+	grid-area: footer;
+	font-size: 2em;
+}
+
+/* Flex example */
+#tags {
+	display: flex;
+	flex-wrap: wrap;
+    padding: 0 200px;
+}
+
+#tags > div {
+    background-color: #44ab99;
+    margin: 10px;
+    padding: 4px;
+    border-radius: 8px;
+}

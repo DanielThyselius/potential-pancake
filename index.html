@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dag 2</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="chess.css">
+</head>
+
+<body>
+  <div id="layout">
+    <div id="header">
+      <span class="logo">logo</span>
+      <p class="header-text"> Min fina header</p>
+      <button id="header-button">Tryck här</button>
+    </div>
+    <div id="menu">
+      <ul>
+        <li class="menu-item">Menu</li>
+        <li class="menu-item" onclick="flexExample()">Flexbox-exempel</li>
+        <li class="menu-item" onclick="testForm()">Testa formulär</li>
+        <li class="menu-item" onclick="play()">Spela Schack</li>
+        <li class="menu-item" onclick="blank()">Rensa</li>
+      </ul>
+    </div>
+    <div id="main">
+      <div id="blank-page" class="page"></div>
+      <div id="flex-page" class="page">
+        <figure>
+          <img src="./placeholder.png" alt="nothing to see here">
+          <figcaption id="tags"></figcaption>
+        </figure>
+       
+        <form onsubmit="addTag(event)" style="margin: 40px">
+          <label for="new-tag">Ny tagg:</label>
+          <input type="text" name="new-tag" id="new-tag">
+          <button type="submit">Lägg till</button>
+        </form>
+
+      </div>
+      <div id="form-page" class="page">
+        <h1>Html form och http anrop</h1>
+
+        <h2>HTTP</h2>
+        <p>Http är ett protokoll för internettrafik, det baseras på en klient-server arkitektur.</p>
+        <p>Läs mer om det <a href="https://www.tutorialspoint.com/http/http_messages.htm">här.</a> eller <a
+            href="https://www.webnots.com/what-is-http/">här</a></p>
+
+        <h3>URI</h3>
+        <p>Uniform Resource Identifier (URI) är en sträng som refererar till en plats på internet, dvs en hemsida eller
+          ett
+          web-API.</p>
+        <p>Såhär ser strukturen ut för en URL</p>
+        <div class="code-background">
+          <p class="code">URL = <span class="property">"http:" "//"</span> host [ <span class="property">":"</span>
+            port ] [ abs_path [ <span class="property">"?"</span> query ]]</p>
+        </div>
+        <p>default port är 80, default abs_path är detsamma som "/", dvs root</p>
+        <p><a href="https://wiki.hostbridge.com/display/DOC/URL+Encoding+Unsafe+and+Reserved+Characters"> URL
+            encoding</a>
+        </p>
+        <p>Vad är <a href="https://danielmiessler.com/study/difference-between-uri-url/">skillnaden på URI och URL?</a>
+        </p>
+
+        <h2>Formulär</h2>
+        <p>Html formulär används för att skicka http-anrop från websidor</p>
+
+        <form method="POST" action="https://httpbin.org/post">
+          <div class="form-group">
+            <label for="input-first-name">Namn</label>
+            <input class="form-control" type="text" tabindex="1" name="first-name" id="input-first-name" />
+          </div>
+          <div class="form-group">
+            <label for="input-last-name">Efternamn</label>
+            <input class="form-control" type="text" tabindex="3" name="last-name" id="input-last-name" />
+          </div>
+          <button class="btn btn-success" type="submit" tabindex="2">Submit</button>
+        </form>
+
+        <p><a href="https://www.w3schools.com/html/html_forms.asp">Gå igenom html forms här</a></p>
+        <br>
+        <p><a href="https://www.w3schools.com/bootstrap4/bootstrap_forms.asp">Snygga till formulär med bootstrap</a></p>
+
+      </div>
+      <div id="chess-page" class="page">
+        <div id="chess-board"></div>
+      </div>
+    </div>
+    <div id="footer">Footer</div>
+    <div id="ad"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./index.js"></script>
+  <script src="./chess.js"></script>
+
+</body>
+
+</html>
